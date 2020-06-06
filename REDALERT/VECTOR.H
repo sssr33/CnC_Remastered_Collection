@@ -50,15 +50,6 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
-#ifdef NEVER
-#ifndef false
-#define false 0
-#endif
-#ifndef true
-#define true 1
-#endif
-#endif
-
 #include	<stdlib.h>
 #include	<stddef.h>
 
