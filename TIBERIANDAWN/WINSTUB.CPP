@@ -562,7 +562,7 @@ HANDLE DebugFile = INVALID_HANDLE_VALUE;
  * HISTORY:                                                                                    *
  *    10/28/96 12:48PM ST : Created                                                            *
  *=============================================================================================*/
-void CCDebugString (char *string)
+void CCDebugString (const char *string)
 {
 #if (0)
 
@@ -742,7 +742,7 @@ void Memory_Error_Handler(void)
 	VisiblePage.Clear();
 	Set_Palette(GamePalette);
 	while (Get_Mouse_State()){Show_Mouse();};
-	CCMessageBox().Process("Error - out of memory.", "Abort", false);
+	CCMessageBox().Process("Error - out of memory.", "Abort", nullptr);
 	Invalidate_Cached_Icons();
 	
 	// Nope. ST - 1/10/2019 10:38AM
@@ -760,7 +760,7 @@ void Memory_Error_Handler(void)
 
 
 
-GraphicBufferClass* Read_PCX_File(char* name, char* Palette, void *Buff, long Size);
+GraphicBufferClass* Read_PCX_File(const char* name, char* Palette, void *Buff, long Size);
 
 
 
@@ -781,7 +781,7 @@ GraphicBufferClass* Read_PCX_File(char* name, char* Palette, void *Buff, long Si
  *    7/5/96 11:30AM ST : Created                                                              *
  *=============================================================================================*/
 
-void Load_Title_Screen(char *name, GraphicViewPortClass *video_page, unsigned char *palette)
+void Load_Title_Screen(const char *name, GraphicViewPortClass *video_page, unsigned char *palette)
 {
 
 	GraphicBufferClass *load_buffer;
@@ -842,7 +842,7 @@ typedef	struct {
 	unsigned char	blue ;
 } PG_RGB ;
 
-GraphicBufferClass* Read_PCX_File(char* name, char* palette, void *Buff, long Size)
+GraphicBufferClass* Read_PCX_File(const char* name, char* palette, void *Buff, long Size)
 {
 	int					i, j;
 	unsigned					rle;

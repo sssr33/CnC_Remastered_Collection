@@ -558,7 +558,7 @@ void Go_Editor(bool flag);
 char *CC_Get_Shape_Filename(void const * shapeptr );
 void CC_Add_Shape_To_Global(void const * shapeptr, char * filename, char code );
 void Bubba_Print(char * format,...);
-void Heap_Dump_Check(char * string );
+void Heap_Dump_Check(const char * string );
 void Dump_Heap_Pointers(void);
 unsigned long Disk_Space_Available(void);
 void * Hires_Load(char * name);
@@ -810,7 +810,7 @@ GameType Select_Serial_Dialog( void );
 int Com_Scenario_Dialog(bool skirmish=false);
 int Com_Show_Scenario_Dialog(void);
 
-void Smart_Printf( char *format, ... );
+void Smart_Printf(const char *format, ... );
 void Hex_Dump_Data( char *buffer, int length );
 void itoh( int i, char *s);
 void Log_Start_Time( char *string );

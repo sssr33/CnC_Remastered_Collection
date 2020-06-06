@@ -87,7 +87,7 @@ int					IPXConnClass::PacketLen;
  *   12/20/1994 BR : Created.                                              *
  *=========================================================================*/
 IPXConnClass::IPXConnClass (int numsend, int numreceive, int maxlen,
-	unsigned short magicnum, IPXAddressClass *address, int id, char *name) :
+	unsigned short magicnum, IPXAddressClass *address, int id, const char *name) :
 #ifdef SEQ_NET
 	SequencedConnClass (numsend, numreceive, maxlen, magicnum,
 #else

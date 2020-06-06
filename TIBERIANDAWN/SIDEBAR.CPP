@@ -1094,7 +1094,7 @@ SidebarClass::StripClass::StripClass(void)
  *=============================================================================================*/
 void SidebarClass::StripClass::One_Time(int )
 {
-	static char *_file[3] = {
+	static const char *_file[3] = {
 		"ION",
 		"ATOM",
 		"BOMB"
@@ -1244,7 +1244,7 @@ void SidebarClass::StripClass::Init_Theater(TheaterType theater)
 	//if (theater != LastTheater) {
 
 
-		static char *_file[3] = {
+		static const char *_file[3] = {
 			"ION",
 			"ATOM",
 			"BOMB"

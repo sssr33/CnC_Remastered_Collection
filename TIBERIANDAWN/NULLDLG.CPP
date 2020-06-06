@@ -8222,7 +8222,7 @@ int Com_Show_Fake_Scenario_Dialog(void)
 
 
 
-void Smart_Printf( char *format, ... )
+void Smart_Printf(const char *format, ... )
 {
 	va_list arglist;
 	char buf[501];

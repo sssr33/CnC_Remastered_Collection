@@ -103,7 +103,7 @@ static bool Dial_Modem( SerialSettingsType *settings, bool reconnect );
 static bool Answer_Modem( SerialSettingsType *settings, bool reconnect );
 static void Modem_Echo( char c );
 
-void Smart_Printf( char *format, ... );
+void Smart_Printf(const char *format, ... );
 void Hex_Dump_Data( char *buffer, int length );
 void itoh( int i, char *s);
 
@@ -7546,7 +7546,7 @@ static void Modem_Echo( char c )
 }	/* end of Modem_Echo */
 
 
-void Smart_Printf( char *format, ... )
+void Smart_Printf(const char *format, ... )
 {
 	va_list arglist;
 	char buf[501];

@@ -669,7 +669,7 @@ int DesiredFrameRate;
 ** These values are used purely for the Mono debug display.  They show the
 ** names of the Global Channel packet types, and the event types.
 */
-char *GlobalPacketNames[] = {
+const char *GlobalPacketNames[] = {
 	"Game?",
 	"Game!",
 	"Player?",
@@ -686,7 +686,7 @@ char *GlobalPacketNames[] = {
 
 
 // yeah, there's 100 empty names here, because the SerialCommandType starts at 100.
-char *SerialPacketNames[] = {
+const char *SerialPacketNames[] = {
 	"",
 	"",
 	"",

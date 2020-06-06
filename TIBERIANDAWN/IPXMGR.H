@@ -238,7 +238,7 @@ class IPXManagerClass : public ConnManClass
 		Debug routines
 		.....................................................................*/
 		virtual void Configure_Debug(int index, int offset, int size,
-			char **names, int maxnames);
+			const char **names, int maxnames);
 		virtual void Mono_Debug_Print(int index, int refresh = 0);
 
 	/*

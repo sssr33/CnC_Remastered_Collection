@@ -52,8 +52,8 @@ class TerrainClass : public ObjectClass, public StageClass
   		/*
 		**	Constructor for terrain object class.
 		*/
-		static void * TerrainClass::operator new(size_t size);
-		static void TerrainClass::operator delete(void *ptr);
+		static void *operator new(size_t size);
+		static void operator delete(void *ptr);
 		TerrainClass(void);
 		TerrainClass(TerrainType id, CELL cell);
 		virtual ~TerrainClass(void);
@@ -125,7 +125,7 @@ class TerrainClass : public ObjectClass, public StageClass
 		*/
 		static void Read_INI(char *buffer);
 		static void Write_INI(char *buffer);
-		static char *INI_Name(void) {return "TERRAIN";};
+		static const char *INI_Name(void) {return "TERRAIN";};
 		bool Load(FileClass & file);
 		bool Save(FileClass & file);
 		virtual void Code_Pointers(void);

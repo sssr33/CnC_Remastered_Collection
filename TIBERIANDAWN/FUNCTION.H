@@ -377,12 +377,12 @@ void CC_Add_Shape_To_Global(void const *shapeptr, char *filename, char code );
 
 void Bubba_Print(char *format,...);
 
-void Heap_Dump_Check( char *string );
+void Heap_Dump_Check(const char *string );
 void Dump_Heap_Pointers( void );
 unsigned long Disk_Space_Available(void);
 
-void Validate_Error(char *name);
-void const * Hires_Retrieve(char *name);
+void Validate_Error(const char *name);
+void const * Hires_Retrieve(const char *name);
 int Get_Resolution_Factor(void);
 
 void Shake_The_Screen(int shakes, HousesType house = HOUSE_NONE);
@@ -516,8 +516,10 @@ void Load_Recording_Values(void);
 */
 void * Small_Icon(void const * iconptr, int iconnum);
 void Set_Window(int window, int x, int y, int w, int h);
-void * Load_Alloc_Data(FileClass &file);
-long Load_Uncompress(FileClass &file, BuffType &uncomp_buff, BuffType &dest_buff, void *reserved_data);
+void* Load_Alloc_Data(FileClass&& file);
+void * Load_Alloc_Data(FileClass& file);
+long Load_Uncompress(FileClass&& file, BuffType &uncomp_buff, BuffType &dest_buff, void *reserved_data);
+long Load_Uncompress(FileClass& file, BuffType& uncomp_buff, BuffType& dest_buff, void* reserved_data);
 long Translucent_Table_Size(int count);
 void *Build_Translucent_Table(void const *palette, TLucentType const *control, int count, void *buffer);
 void *Conquer_Build_Translucent_Table(void const *palette, TLucentType const *control, int count, void *buffer);
@@ -595,7 +597,7 @@ GameType Select_Serial_Dialog( void );
 int Com_Scenario_Dialog(void);
 int Com_Show_Scenario_Dialog(void);
 
-void Smart_Printf( char *format, ... );
+void Smart_Printf(const char *format, ... );
 void Hex_Dump_Data( char *buffer, int length );
 void itoh( int i, char *s);
 
@@ -780,7 +782,7 @@ void Blit_Hid_Page_To_Seen_Buff(void);
 extern bool RunningAsDLL;
 
 
-template<class T> inline T Random_Picky(T a, T b, char *sfile, int line)
+template<class T> inline T Random_Picky(T a, T b, const char *sfile, int line)
 {
 	sfile = sfile;
 	line = line;

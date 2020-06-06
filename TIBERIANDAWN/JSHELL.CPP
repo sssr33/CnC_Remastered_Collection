@@ -44,6 +44,7 @@
 #include	"wwfile.h"
 
 #include <assert.h>
+#include <utility>
 
 /*********************************************************************************************** 
  * Small_Icon -- Create a small icon from a big one.                                           * 
@@ -196,7 +197,7 @@ void File_Fatal(char const *message)
  * HISTORY:                                                                                    *
  *   10/17/1994 JLB : Created.                                                                 *
  *=============================================================================================*/
-long Load_Uncompress(FileClass &file, BuffType &uncomp_buff, BuffType &dest_buff, void *reserved_data)
+long Load_Uncompress(FileClass&& file, BuffType &uncomp_buff, BuffType &dest_buff, void *reserved_data)
 {
 	unsigned short	size;
 	void	*sptr = uncomp_buff.Get_Buffer();
@@ -272,6 +273,11 @@ long Load_Uncompress(FileClass &file, BuffType &uncomp_buff, BuffType &dest_buff
 	return((long)size);
 }
 
+long Load_Uncompress(FileClass& file, BuffType& uncomp_buff, BuffType& dest_buff, void* reserved_data)
+{
+	return Load_Uncompress(std::move(file), uncomp_buff, dest_buff, reserved_data);
+}
+
 
 /***********************************************************************************************
  * Load_Alloc_Data -- Allocates a buffer and loads the file into it.                           *
@@ -290,7 +296,7 @@ long Load_Uncompress(FileClass &file, BuffType &uncomp_buff, BuffType &dest_buff
  * HISTORY:                                                                                    *
  *   10/17/1994 JLB : Created.                                                                 *
  *=============================================================================================*/
-void * Load_Alloc_Data(FileClass &file)
+void * Load_Alloc_Data(FileClass&& file)
 {
 	void *ptr = 0;
 	long size = file.Size();
@@ -300,6 +306,11 @@ void * Load_Alloc_Data(FileClass &file)
 		file.Read(ptr, size);
 	}
 	return(ptr);
+}
+
+void* Load_Alloc_Data(FileClass& file)
+{
+	return Load_Alloc_Data(std::move(file));
 }
 
 

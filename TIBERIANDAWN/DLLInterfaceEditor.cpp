@@ -129,7 +129,7 @@ void CNC_Editor_Load_Mix_Files()
 * CNC_Editor_Setup_Content_Directory
 * Sets up where the system should load map data from.
 **************************************************************************************************/
-void CNC_Editor_Setup_Content_Directory(char* cncdata_directory, char* cd_directory)
+void CNC_Editor_Setup_Content_Directory(const char* cncdata_directory, const char* cd_directory)
 {
 	char content_directory[_MAX_PATH];
 
@@ -144,7 +144,7 @@ void CNC_Editor_Setup_Content_Directory(char* cncdata_directory, char* cd_direct
 	}
 }
 
-void CNC_Editor_Setup_Content_Directory(char* cncdata_directory, int CD_index)
+void CNC_Editor_Setup_Content_Directory(const char* cncdata_directory, int CD_index)
 {
 	char cd_name[_MAX_PATH];
 	sprintf(cd_name, "CD%i", CD_index);

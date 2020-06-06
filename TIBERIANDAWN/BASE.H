@@ -75,7 +75,7 @@ class BaseClass
 		*/
 		void Read_INI(char *buffer);
 		void Write_INI(char *buffer);
-		static char *INI_Name(void) {return "Base";}
+		static const char *INI_Name(void) {return "Base";}
 		bool Load(FileClass & file);
 		bool Save(FileClass & file);
 		virtual void Code_Pointers(void) {};

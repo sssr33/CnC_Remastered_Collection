@@ -94,7 +94,7 @@ static unsigned long CRC[32] =
 	 0,0,0,0,0,0,0,0,0,0,
 	 0,0};
 
-static char *ColorNames[6] = {
+static const char *ColorNames[6] = {
 	"Yellow",
 	"Red",
 	"BlueGreen",
