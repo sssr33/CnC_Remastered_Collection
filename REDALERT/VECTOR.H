@@ -120,6 +120,8 @@ template<class T>
 class DynamicVectorClass : public VectorClass<T>
 {
 	public:
+		using VectorClass<T>::Length;
+
 		DynamicVectorClass(unsigned size=0, T const * array=0);
 
 		// Change maximum size of vector.
@@ -154,6 +156,8 @@ class DynamicVectorClass : public VectorClass<T>
 		virtual int ID(T const & ptr);
 
 	protected:
+		using VectorClass<T>::VectorMax;
+		using VectorClass<T>::IsAllocated;
 
 		/*
 		**	This is a count of the number of active objects in this
